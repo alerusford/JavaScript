@@ -3,37 +3,41 @@ var buttonMinus = document.getElementById('buttonMinus')
 var buttonMultiply = document.getElementById('buttonMultiply')
 var buttonDivided = document.getElementById('buttonDivided')
 
-function onButtonPlusClick(params) {
-    var input1 = document.getElementById('number1')
-    var input2 = document.getElementById('number2')
-    var number1 = Number(input1.value)
-    var number2 = Number(input2.value)
-    var result = number1 + number2
+var input1 = document.getElementById('number1')
+var input2 = document.getElementById('number2')
+
+function getNumber1(params) {
+    return Number(input1.value)
+}
+function getNumber2(params) {
+    return Number(input2.value)
+}
+
+function makeOperation(operationCode) {
+    if (operationCode === '+') {
+        var result = getNumber1() + getNumber2()
+    } else if (operationCode === '-') {
+        var result = getNumber1() - getNumber2()
+    } else if (operationCode === '*') {
+        var result = getNumber1() * getNumber2()
+    } else if (operationCode === '/') {
+        var result = getNumber1() / getNumber2()
+    }
     console.log(result)
+    }
+
+
+function onButtonPlusClick(params) {
+    makeOperation('+')
 }
 function onButtonMinusClick(params) {
-    var input1 = document.getElementById('number1')
-    var input2 = document.getElementById('number2')
-    var number1 = Number(input1.value)
-    var number2 = Number(input2.value)
-    var result = number1 - number2
-    console.log(result)
+    makeOperation('-')
 }
 function onButtonMultiplyClick(params) {
-    var input1 = document.getElementById('number1')
-    var input2 = document.getElementById('number2')
-    var number1 = Number(input1.value)
-    var number2 = Number(input2.value)
-    var result = number1 * number2
-    console.log(result)
+    makeOperation('*')
 }
 function onButtonDividedClick(params) {
-    var input1 = document.getElementById('number1')
-    var input2 = document.getElementById('number2')
-    var number1 = Number(input1.value)
-    var number2 = Number(input2.value)
-    var result = number1 / number2
-    console.log(result)
+    makeOperation('/')
 }
 
 buttonPlus.addEventListener('click', onButtonPlusClick)
