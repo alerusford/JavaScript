@@ -1,3 +1,4 @@
+console.log(car1.start)
 // find elements
 var showPrevBtn = document.getElementById('show-prev');
 var showNextBtn = document.getElementById('show-next');
