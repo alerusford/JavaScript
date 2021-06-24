@@ -1,36 +1,36 @@
-var buttonPlus = document.getElementById('buttonPlus')
-var buttonMinus = document.getElementById('buttonMinus')
-var buttonMultiply = document.getElementById('buttonMultiply')
-var buttonDivided = document.getElementById('buttonDivided')
+var buttonPlus = document.getElementById('buttonPlus');
+var buttonMinus = document.getElementById('buttonMinus');
+var buttonMultiply = document.getElementById('buttonMultiply');
+var buttonDivided = document.getElementById('buttonDivided');
 
-var input1 = document.getElementById('number1')
-var input2 = document.getElementById('number2')
-
+var input1 = document.getElementById('number1');
+var input2 = document.getElementById('number2');
 function makeOperation(operationCode) {
-    var number1 = Number(input1.value)
-    var number2 = Number(input2.value)
+    var number1 = Number(input1.value);
+    var number2 = Number(input2.value);
     
     if (operationCode === '+') {
-        var result = number1 + number2
+        var result = number1 + number2;
     } else if (operationCode === '-') {
-        var result = number1 - number2
+        var result = number1 - number2;
     } else if (operationCode === '*') {
-        var result = number1 * number2
+        var result = number1 * number2;
     } else if (operationCode === '/') {
-        var result = number1 / number2
+        var result = number1 / number2;
     }
-    console.log(result)
+    console.log(result);
     }
 
 function onOperationButtonClick(eventObject) {
-    var clickedElement = eventObject.currentTarget
-    var operation = clickedElement.innerHTML
-    makeOperation(operation)
+    var clickedElement = eventObject.currentTarget;
+    var operation = clickedElement.innerHTML;
+    makeOperation(operation);
 }
 
-buttonPlus.addEventListener('click', onOperationButtonClick)
-buttonMinus.addEventListener('click', onOperationButtonClick)
-buttonMultiply.addEventListener('click', onOperationButtonClick)
-buttonDivided.addEventListener('click', onOperationButtonClick)
+var operationButtons = [buttonPlus, buttonMinus,buttonMultiply, buttonDivided];
 
-// https://youtu.be/8DRvw6qSfE4
+for (var i = 0; i < operationButtons.length; i++) {
+    var button = operationButtons[i];
+    button.addEventListener('click', onOperationButtonClick);   
+}
+// https://youtu.be/6jmwkoRXHIk?t=3
