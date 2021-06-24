@@ -1,0 +1,21 @@
+.calculator {
+    width:500px;
+    margin: 0 auto;
+    text-align: center;
+    background: aliceblue;
+    padding: 20px;
+    border: 1px solid black;
+
+}
+.calculator .operations_block button {
+    height: 40px;
+    margin: 20px;
+    width: 40px;
+}
+.inputs_block label {
+    display: block;
+}
+.input_block {
+    display: inline-block;
+    padding: 10px;
+}
