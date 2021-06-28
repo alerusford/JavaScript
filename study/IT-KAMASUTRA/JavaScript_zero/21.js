@@ -1,4 +1,4 @@
-console.log(car1.start)
+// console.log(car1.start)
 // find elements
 var showPrevBtn = document.getElementById('show-prev');
 var showNextBtn = document.getElementById('show-next');
@@ -15,7 +15,7 @@ var currentImageIndex = 0;
 slideImage.src = imagesUrls[currentImageIndex];
 
 // functions definitions
-function onShowPrevBtnClick(params) {
+function onShowPrevBtnClick(event) {
     currentImageIndex --;
     slideImage.src = imagesUrls[currentImageIndex];
     showNextBtn.disabled = false;
@@ -26,7 +26,7 @@ function onShowPrevBtnClick(params) {
 }
 
 
-function onShowNextBtnClick(params) {
+function onShowNextBtnClick(event) {
     currentImageIndex++;
     slideImage.src = imagesUrls[currentImageIndex];
     showPrevBtn.disabled = false;
