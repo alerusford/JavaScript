@@ -7,29 +7,29 @@ var slider1 = {
 
     start: function (params) {
         // subscribe to events
-        showPrevBtn.addEventListener('click', onShowPrevBtnClick);
-        showNextBtn.addEventListener('click', onShowNextBtnClick);
-        slideImage.src = imagesUrls[currentImageIndex];
-
+        this.showPrevBtn.addEventListener('click', this.onShowPrevBtnClick);
+        this.showNextBtn.addEventListener('click', this.onShowNextBtnClick);
+        this.slideImage.src = this.imagesUrls[this.currentImageIndex];
+        this.showPrevBtn.disabled = true;
     },
 
     onShowPrevBtnClick: function (event) {
-        currentImageIndex--;
-        slideImage.src = imagesUrls[currentImageIndex];
-        showNextBtn.disabled = false;
+        this.currentImageIndex--;
+        this.slideImage.src = this.imagesUrls[this.currentImageIndex];
+        this.showNextBtn.disabled = false;
 
-        if (currentImageIndex === 0) {
-            showPrevBtn.disabled = true;
+        if (this.currentImageIndex === 0) {
+            this.showPrevBtn.disabled = true;
         }
     },
 
     onShowNextBtnClick: function (event) {
-        currentImageIndex++;
-        slideImage.src = imagesUrls[currentImageIndex];
-        showPrevBtn.disabled = false;
+        this.currentImageIndex++;
+        this.slideImage.src = this.imagesUrls[this.currentImageIndex];
+        this.showPrevBtn.disabled = false;
 
-        if (currentImageIndex === (imagesUrls.length - 1)) {
-            showNextBtn.disabled = true;
+        if (this.currentImageIndex === (this.imagesUrls.length - 1)) {
+            this.showNextBtn.disabled = true;
         }
 
     },
