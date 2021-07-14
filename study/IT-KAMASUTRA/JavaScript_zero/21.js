@@ -1,4 +1,8 @@
-slider1.start();
+// var cont1 = document.querySelector('#itk-slider1');
+// var cont2 = document.querySelector('#itk-slider2');
+
+slider1.start('itk-slider1');
+slider2.start('itk-slider2');
 // // find elements
 // var showPrevBtn = document.getElementById('show-prev');
 // var showNextBtn = document.getElementById('show-next');

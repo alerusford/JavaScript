@@ -1,13 +1,19 @@
-var slider1 = {
+var slider2 = {
     imagesUrls: ['https://c1.klipartz.com/pngpicture/367/606/sticker-png-web-banner-sticker-text-information-sales-art-line-badge-thumbnail.png', 'https://thypix.com/wp-content/uploads/2021/02/pixel-sunglasses-17-700x407.png', 'https://e1.pngegg.com/pngimages/298/527/png-clipart-snoopy.png', 'https://png.pngtree.com/png-clipart/20190601/ourmid/pngtree-cartoon-pop-blast-bubble-dialog-font-png-image_15973.jpg'],
-    showPrevBtn: document.getElementById('show-prev'),
-    showNextBtn: document.getElementById('show-next'),
-    slideImage: document.getElementById('slide-img'),
     currentImageIndex: 0,
 
-    start: function (params) {
+    showPrevBtn: null, //document.getElementById('show-prev'),
+    showNextBtn: null, //document.getElementById('show-next'),
+    slideImage: null, //document.getElementById('slide-img'),
+
+    start: function (elId) {
         // subscribe to events
         var that = this;
+        var elSelector = '#' + elId;
+        var el = document.querySelector(elSelector); 
+        this.showPrevBtn = el.querySelector('.show-prev'),
+        this.showNextBtn = el.querySelector('.show-next'),
+        this.slideImage = el.querySelector('.slide-img'),
 
         this.showPrevBtn.addEventListener('click', function() {
             that.onShowPrevBtnClick();
@@ -15,6 +21,7 @@ var slider1 = {
         this.showNextBtn.addEventListener('click', function() {
             that.onShowNextBtnClick();
         });
+        
         this.slideImage.src = this.imagesUrls[this.currentImageIndex];
         this.showPrevBtn.disabled = true;
     },
