@@ -1,3 +1,6 @@
+var slider1 = sliderFactory.createSlider();
+var slider2 = sliderFactory.createSlider();
+
 // var cont1 = document.querySelector('#itk-slider1');
 // var cont2 = document.querySelector('#itk-slider2');
 
