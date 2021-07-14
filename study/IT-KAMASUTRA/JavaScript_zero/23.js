@@ -7,8 +7,14 @@ var slider1 = {
 
     start: function (params) {
         // subscribe to events
-        this.showPrevBtn.addEventListener('click', this.onShowPrevBtnClick);
-        this.showNextBtn.addEventListener('click', this.onShowNextBtnClick);
+        var that = this;
+
+        this.showPrevBtn.addEventListener('click', function() {
+            that.onShowPrevBtnClick();
+        });
+        this.showNextBtn.addEventListener('click', function() {
+            that.onShowNextBtnClick();
+        });
         this.slideImage.src = this.imagesUrls[this.currentImageIndex];
         this.showPrevBtn.disabled = true;
     },
@@ -36,3 +42,5 @@ var slider1 = {
 
 
 };
+
+// https://youtu.be/LzlOfXaaO6Q?list=PLcvhF2Wqh7DPD5sRK3lw4bjBsKdgY2bPi&t=1
