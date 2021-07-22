@@ -3,7 +3,7 @@
   margin:  0 auto;
   grid-template-areas: 
   "header header"
-  "nav content";
+  "nav profile";
 
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
@@ -11,19 +11,20 @@
 }
 .header {
   grid-area: header;
-  background-color: green;
+  background-color: #050505;
 }
 .header img {
-  width: 40px;
+  width: 200px;
+  padding: 10px;
 }
 .nav {
   grid-area: nav;
   background-color: burlywood;
 }
-.content {
-  grid-area: content;
+.profile {
+  grid-area: profile;
   background-color: cornflowerblue;
 }
-.content img {
+.profile img {
   width: 1200px;
 }
